@@ -4,7 +4,7 @@
 
 - In other words, we can say that a Repository Design Pattern acts as a middleman or middle layer between the rest of the application and the data access logic. That means a repository pattern isolates all the data access codes from the rest of the application. The advantage of doing so is that, if you need to do any changes then you need to do it in one place. Another benefit is that testing your controllers becomes easy because the testing framework need not run against the actual database access code.
     
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/1163ccb8-94fb-4b26-af60-bcff70022b70)
+  ![image](https://github.com/dotnet-simformsolutions/repository-design-pattern/blob/master/images/273105772-1163ccb8-94fb-4b26-af60-bcff70022b70.png)
 
 - As you can see in the above diagram, now the Employee controller won’t talk with the Entity Framework data context class directly. Also, now there are no queries or any other data access code written in the action methods of the Employee Controller. All these operations (i.e. CRUD operations) are wrapped by the Employee Repository. The Employee Repository uses the Entity Framework data context class to perform the CRUD operations. As you can see, now the Employee repository has methods such as GetAll(), GetByID(), Insert(), Update(), and Delete(). These methods are going to perform the Typical CRUD operations against the underlying database. The Employee controller uses those methods to perform the required database operations.
 
@@ -26,14 +26,14 @@
 
 - Instead of accessing database or performing database operation directly through the controller we seperate an make repository that decouple the database logic. Create User repository
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/3c7b59e9-65e8-44fa-a964-46368e4da19b)
+  ![image](https://github.com/dotnet-simformsolutions/repository-design-pattern/blob/master/images/273107646-3c7b59e9-65e8-44fa-a964-46368e4da19b.png)
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/b370148f-2ee9-45f5-88a4-e6c0515a4cbe)
+  ![image](https://github.com/dotnet-simformsolutions/repository-design-pattern/blob/master/images/273107608-b370148f-2ee9-45f5-88a4-e6c0515a4cbe.png)
 
 - Now register that repository as a service dependency injection ( AddSingleton, AddTransient, AddScoped )
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/807783b4-bdec-4038-af6a-22915b26c769)
+  ![image](https://github.com/dotnet-simformsolutions/repository-design-pattern/blob/master/images/273107951-807783b4-bdec-4038-af6a-22915b26c769.png)
 
 - Now use it in appropriate controller according to your need, first inject the service into controller then you are ready to use it.
 
-  ![image](https://github.com/jil1710/readmedemo/assets/125335932/a4559966-fc2e-49f0-a01e-5dfb90f195ac)
+  ![image](https://github.com/dotnet-simformsolutions/repository-design-pattern/blob/master/images/273108234-a4559966-fc2e-49f0-a01e-5dfb90f195ac.png)
